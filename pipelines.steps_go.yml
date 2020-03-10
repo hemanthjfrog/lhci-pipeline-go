@@ -21,6 +21,6 @@ pipelines:
             - echo "Executing LHCI in container for GoCenter"
           onExecute:
             - cd $res_go_lh_resourcePath/
-            - lhci autorun
+            - lhci autorun --config="./lhci-go.json" --collect.url="https://search.gocenter.io/stats"
           onComplete:
             - add_run_files .lighthouseci lhci_report
