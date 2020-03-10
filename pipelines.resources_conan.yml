@@ -3,4 +3,4 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: hemanth_personal            # Change to your integration
-      path: hemanthjfrog/conan-clone                # Change to your repo
+      path: hemanthjfrog/lhci-pipeline                # Change to your repo
