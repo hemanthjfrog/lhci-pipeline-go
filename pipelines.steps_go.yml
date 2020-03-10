@@ -6,9 +6,9 @@ pipelines:
         configuration:
           environmentVariables:
               LHCI_BUILD_CONTEXT__EXTERNAL_BUILD_URL: "$step_url"
-              LHCI_BUILD_CONTEXT__CURRENT_BRANCH: "$res_go_lhci_branchName"
+              LHCI_BUILD_CONTEXT__CURRENT_BRANCH: "$res_go_lh_branchName"
           inputResources:
-            - name: go_lhci
+            - name: go_lh
           runtime:
             type: image
             image:
@@ -20,7 +20,7 @@ pipelines:
           onStart:
             - echo "Executing LHCI in container"
           onExecute:
-            - cd $res_go_lhci_resourcePath/
+            - cd $res_go_lh_resourcePath/
             - lhci autorun
           onComplete:
             - add_run_files .lighthouseci lhci_report

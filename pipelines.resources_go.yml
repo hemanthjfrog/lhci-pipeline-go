@@ -1,5 +1,5 @@
 resources:
-  - name: go_lhci
+  - name: go_lh
     type: GitRepo
     configuration:
       gitProvider: hemanth_personal            # Change to your integration
