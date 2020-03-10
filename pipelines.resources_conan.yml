@@ -1,6 +1,0 @@
-resources:
-  - name: conan_lh
-    type: GitRepo
-    configuration:
-      gitProvider: hemanth_personal            # Change to your integration
-      path: hemanthjfrog/lhci-pipeline                # Change to your repo
