@@ -1,5 +1,5 @@
 pipelines:
-  - name: pipeline_center_tests
+  - name: pipeline_conan_center_tests
     steps:
       - name: exec_lhci
         type: Bash
@@ -18,7 +18,7 @@ pipelines:
                 autoPull: true        # default true; pulls image before runx
         execution:
           onStart:
-            - echo "Executing LHCI in container"
+            - echo "Executing LHCI in container for Conan"
           onExecute:
             - cd $res_conan_lh_resourcePath/
             - lhci autorun
