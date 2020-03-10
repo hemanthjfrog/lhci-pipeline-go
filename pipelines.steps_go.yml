@@ -18,7 +18,7 @@ pipelines:
                 autoPull: true        # default true; pulls image before runx
         execution:
           onStart:
-            - echo "Executing LHCI in container for GoCenter"
+            - echo "Executing LHCI in container for Go Center"
           onExecute:
             - cd $res_go_lh_resourcePath/
             - lhci autorun --config="./lhci-go.json" --collect.url="https://search.gocenter.io/stats"
