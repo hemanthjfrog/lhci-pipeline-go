@@ -1,0 +1,26 @@
+pipelines:
+  - name: pipeline_center_tests
+    steps:
+      - name: exec_lhci
+        type: Bash
+        configuration:
+          environmentVariables:
+              LHCI_BUILD_CONTEXT__EXTERNAL_BUILD_URL: "$step_url"
+              LHCI_BUILD_CONTEXT__CURRENT_BRANCH: "$res_lhci_config_branchName"
+          inputResources:
+            - name: lhci_config
+          runtime:
+            type: image
+            image:
+              custom:
+                name: hemanthsridhar-docker-lhci-server-center.bintray.io/lhci
+                tag: "4.0"
+                autoPull: true        # default true; pulls image before runx
+        execution:
+          onStart:
+            - echo "Executing LHCI in container"
+          onExecute:
+            - cd $res_lhci_config_resourcePath/
+            - lhci autorun
+          onComplete:
+            - add_run_files .lighthouseci lhci_report
