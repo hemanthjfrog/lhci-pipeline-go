@@ -2,5 +2,5 @@ resources:
   - name: go_lh
     type: GitRepo
     configuration:
-      gitProvider: hemanth_personal            # Change to your integration
+      gitProvider: hemanth_git            # Change to your integration
       path: hemanthjfrog/lhci-config           # Change to your repo
